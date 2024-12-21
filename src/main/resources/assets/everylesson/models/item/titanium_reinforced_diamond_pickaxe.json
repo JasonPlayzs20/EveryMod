@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "everylesson:item/titanium_reinforced_diamond_pickaxe"
+  }
+}

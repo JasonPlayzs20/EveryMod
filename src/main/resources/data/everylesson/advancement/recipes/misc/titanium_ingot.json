@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chunk_of_titanium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "everylesson:chunk_of_titanium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "everylesson:titanium_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chunk_of_titanium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "everylesson:titanium_ingot"
+    ]
+  }
+}
