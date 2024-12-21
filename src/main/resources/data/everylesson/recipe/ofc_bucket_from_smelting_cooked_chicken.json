@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 30,
+  "experience": 0.45,
+  "group": "idk",
+  "ingredient": {
+    "item": "minecraft:cooked_chicken"
+  },
+  "result": {
+    "id": "everylesson:ofc_bucket"
+  }
+}

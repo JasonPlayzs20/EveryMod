@@ -38,10 +38,10 @@ task moveGeneratedFiles(type: Copy) {
 	}
 }
 
-tasks.named("runClient") {
-	doFirst {moveGeneratedFiles}
-	dependsOn moveGeneratedFiles
-
+gradle.projectsEvaluated {
+	tasks.named("runDatagen") {
+		finalizedBy moveGeneratedFiles  // Ensure 'moveGeneratedFiles' runs after 'runDatagen'
+	}
 } // Ensure this runs as part of the build process
 dependencies {
 	// To change the versions see the gradle.properties file
