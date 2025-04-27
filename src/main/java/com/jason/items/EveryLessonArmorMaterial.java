@@ -18,7 +18,8 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class EveryLessonArmorMaterial {
-    public static void initialize() {}
+    public static void initialize() {
+    }
 
     public static final RegistryEntry<ArmorMaterial> END = registerMaterial("end",
             new EnumMap<>(Map.of(

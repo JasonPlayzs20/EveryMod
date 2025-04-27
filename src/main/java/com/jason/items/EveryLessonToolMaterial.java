@@ -9,8 +9,9 @@ import net.minecraft.registry.tag.TagKey;
 
 import java.util.Objects;
 import java.util.function.Supplier;
+
 public enum EveryLessonToolMaterial implements ToolMaterial {
-    TITANIUM_REINFORCED_DIAMOND_PICKAXE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL,2031,27,3.0F,22,Ingredient.ofItems(ModItems.Titanium_Ingot));
+    TITANIUM_REINFORCED_DIAMOND_PICKAXE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 27, 3.0F, 15, Ingredient.ofItems(ModItems.Titanium_Ingot));
 
 //    NETHERITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 4.0F, 15, () -> {
 //        return Ingredient.ofItems(new ItemConvertible[]{Items.NETHERITE_INGOT});
@@ -50,10 +51,10 @@ public enum EveryLessonToolMaterial implements ToolMaterial {
     }
 
     public int getEnchantability() {
-        return 1;
+        return this.enchantability;
     }
 
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient;
+        return (Ingredient) this.repairIngredient;
     }
 }

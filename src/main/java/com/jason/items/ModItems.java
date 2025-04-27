@@ -19,30 +19,36 @@ public class ModItems {
             .nutrition(6)
             .saturationModifier(7)
             .build();
-    public static final Item KFC_Bucket = register(new Item(new Item.Settings().food(KFC_Bucket_component)),"ofc_bucket");
+    public static final Item KFC_Bucket = register(new Item(new Item.Settings().food(KFC_Bucket_component)), "ofc_bucket");
     //items
-    public static final Item Titanium_Ingot = register(new Item(new Item.Settings()),"titanium_ingot");
-    public static final Item Chunk_Of_Titanium = register(new Item(new Item.Settings()),"chunk_of_titanium");
+    public static final Item Titanium_Ingot = register(new Item(new Item.Settings()), "titanium_ingot");
+    public static final Item Chunk_Of_Titanium = register(new Item(new Item.Settings()), "chunk_of_titanium");
     //tools
-    public static final Item TITANIUM_REINFORCED_DIAMOND_PICKAXE = register(new PickaxeItem(ToolMaterials.DIAMOND,
+    public static final PickaxeItem TITANIUM_REINFORCED_DIAMOND_PICKAXE = registerPic(new PickaxeItem(ToolMaterials.NETHERITE,
             (new Item.Settings()).attributeModifiers(PickaxeItem.createAttributeModifiers(EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE,
-                    EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE.getAttackDamage(), -2.8F))),"titanium_reinforced_diamond_pickaxe");
-//    public static final Item TITANIUM_REINFORCED_DIAMOND_PICKAXE = register(new PickaxeItem(ToolMaterials.DIAMOND,
-//            (new Item.Settings())),"titanium_reinforced_diamond_pickaxe");
-    public static Item register(Item item, String id) {
-        Identifier ItemID = Identifier.of(EveryLesson.MOD_ID,id);
+                    EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE.getAttackDamage(), -2.8F))), "titanium_reinforced_diamond_pickaxe");
 
-        Item registeredItem = Registry.register(Registries.ITEM,ItemID,item);
 
-        return registeredItem;
+    public static <T extends Item> T register(T item, String id) {
+        Identifier ItemID = Identifier.of(EveryLesson.MOD_ID, id);
+        return Registry.register(Registries.ITEM, ItemID, item);
     }
 
+    public static PickaxeItem registerPic(PickaxeItem item, String id) {
+        Identifier ItemID = Identifier.of(EveryLesson.MOD_ID, id);
+        return Registry.register(Registries.ITEM, ItemID, item);
+    }
+//
+//    public static <T extends Item> T register(String name, T item) {
+//        return Registry.register(Registries.ITEM, TutorialMod.id(name), item);
+//    }
 
 
     private static void addItemsToTab(FabricItemGroupEntries entries) {
         entries.add(Titanium_Ingot);
         entries.add(Chunk_Of_Titanium);
         entries.add(KFC_Bucket);
+        entries.add(TITANIUM_REINFORCED_DIAMOND_PICKAXE);
     }
 
     public static void registerItems() {
@@ -52,9 +58,8 @@ public class ModItems {
         FuelRegistry.INSTANCE.add(ModItems.Chunk_Of_Titanium, 1000);
 
         //custom add to tabs
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(ModItems.TITANIUM_REINFORCED_DIAMOND_PICKAXE));
+//        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> itemGroup.add(ModItems.TITANIUM_REINFORCED_DIAMOND_PICKAXE));
     }
-
 
 
 }
