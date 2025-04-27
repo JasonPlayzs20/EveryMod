@@ -24,10 +24,13 @@ public class ModItems {
     public static final Item Titanium_Ingot = register(new Item(new Item.Settings()), "titanium_ingot");
     public static final Item Chunk_Of_Titanium = register(new Item(new Item.Settings()), "chunk_of_titanium");
     //tools
-    public static final PickaxeItem TITANIUM_REINFORCED_DIAMOND_PICKAXE = registerPic(new PickaxeItem(ToolMaterials.NETHERITE,
+    public static final PickaxeItem TITANIUM_REINFORCED_DIAMOND_PICKAXE = registerPic(new PickaxeItem(EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE,
             (new Item.Settings()).attributeModifiers(PickaxeItem.createAttributeModifiers(EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE,
                     EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE.getAttackDamage(), -2.8F))), "titanium_reinforced_diamond_pickaxe");
 
+//    public static final PickaxeItem TITANIUM_REINFORCED_DIAMOND_PICKAXE = registerPic(new PickaxeItem(EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE,
+//            (new Item.Settings()).attributeModifiers(PickaxeItem.createAttributeModifiers(EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE,
+//                    EveryLessonToolMaterial.TITANIUM_REINFORCED_DIAMOND_PICKAXE.getAttackDamage(), -2.8F))), "titanium_reinforced_diamond_pickaxe");
 
     public static <T extends Item> T register(T item, String id) {
         Identifier ItemID = Identifier.of(EveryLesson.MOD_ID, id);
